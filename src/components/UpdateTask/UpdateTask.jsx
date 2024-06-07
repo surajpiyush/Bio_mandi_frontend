@@ -29,7 +29,7 @@ const token=sessionStorage.getItem('jwtToken')
 
     try {
 		const res = await axios.put(
-			'http://localhost:4000/task/updateTask/'+location.state.item._id,
+			'https://bio-mandi-backend.onrender.com/task/updateTask/'+location.state.item._id,
 			updatedTask,
 			{
 				headers: {
