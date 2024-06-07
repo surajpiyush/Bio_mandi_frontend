@@ -13,7 +13,7 @@ const Table = () => {
 			try {
 				const token = sessionStorage.getItem("jwtToken"); // Use getItem instead of get
 				const response = await axios.get(
-					"http://localhost:4000/task/getAllTask",
+					"https://bio-mandi-backend.onrender.com/task/getAllTask",
 					{
 						headers: {
 							Authorization: `Bearer ${token}`,
@@ -34,7 +34,7 @@ const Table = () => {
 
 	const handleAdd = (item) => {
 		try {
-			axios.post("http://localhost:4000/task/createTask", item, {
+			axios.post("https://bio-mandi-backend.onrender.com/task/createTask", item, {
 				"Content-Type": "application/json",
 			});
 			console.log("Update item:", item);
@@ -42,7 +42,7 @@ const Table = () => {
 	};
 	const handleUpdate = (item,id) => {
 		try {
-			axios.put("http://localhost:4000/task/updateTask/"+id, item, {
+			axios.put("https://bio-mandi-backend.onrender.com/task/updateTask/"+id, item, {
 				"Content-Type": "application/json",
 			});
 		} catch (error) {}
@@ -54,7 +54,7 @@ const Table = () => {
     const token = sessionStorage.getItem("jwtToken");
 
     try {
-        const response = await axios.delete(`http://localhost:4000/task/deleteTask/${itemId}`, {
+        const response = await axios.delete(`https://bio-mandi-backend.onrender.com/task/deleteTask/${itemId}`, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
