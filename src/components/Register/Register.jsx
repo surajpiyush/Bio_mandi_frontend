@@ -20,7 +20,7 @@ const Register = () => {
   const handleRegister = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/user/register', formData,{
+      const response = await axios.post('https://bio-mandi-backend.onrender.com/user/register', formData,{
         headers: {
           'Content-Type': 'application/json',
         }
